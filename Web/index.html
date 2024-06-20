@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repostería Deliciosa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-contenido">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#carrito">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="productos">
+            <h2>Nuestras Delicias</h2>
+            <div class="contenedor-productos">
+            <div class="producto" data-id="1" data-precio="100">
+                <img src="Pudin de pan.png" alt="Pudin de pan">
+                <h3>Pudin de pan</h3>
+                <p>Precio: $100</p>
+                <button onclick="agregarAlCarrito(1, 'Pudin de pan', 100)">Agregar al Carrito</button>
+            </div>
+            <div class="producto" data-id="2" data-precio="150">
+                <img src="Pastel 3 Leche.png" alt="Pastel de 3 Leche">
+                <h3>Paster de 3 Leche</h3>
+                <p>Precio: $150</p>
+                <button onclick="agregarAlCarrito(2, 'Pastel 3 Leche', 150)">Agregar al Carrito</button>
+            </div>
+            <div class="producto" data-id="3" data-precio="150">
+                <img src="Flan de leche.png" alt="Flan de Leche">
+                <h3>Flan de Leche</h3>
+                <p>Precio: $150</p>
+                <button onclick="agregarAlCarrito(3, 'Flan de leche', 150)">Agregar al Carrito</button>
+            </div>
+            <div class="producto" data-id="4" data-precio="100">
+                <img src="Brownies.png" alt="Brownies">
+                <h3>Brownies</h3>
+                <p>Precio: $100</p>
+                <button onclick="agregarAlCarrito(4, 'Brownies', 100)">Agregar al Carrito</button>
+            </div>
+            <!-- Añade más productos aquí -->
+        </section>
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p>Total: $<span id="total-carrito">0</span></p>
+        </section>
+        <section id="contacto">
+            <h2>Contacta con Nosotros</h2>
+            <form id="formulario-pedido" onsubmit="enviarPedido(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br><br>
+                <label for="direccion">Dirección:</label>
+                <textarea id="direccion" name="direccion" required></textarea><br><br>
+                <input type="submit" value="Enviar Pedido">
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
